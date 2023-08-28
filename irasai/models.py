@@ -14,6 +14,7 @@ class Irasas(models.Model):
     albumas = models.CharField('Albumas', max_length = 100)
     metai_pasirode = models.IntegerField('Pirmo leidimo metai')
     aprasymas = models.TextField('Aprasymas', max_length = 2000)
+
     artistasFK = models.ForeignKey('Artistas', on_delete=models.SET_NULL, null=True, related_name='irasas_set')
 
     def __str__(self):
