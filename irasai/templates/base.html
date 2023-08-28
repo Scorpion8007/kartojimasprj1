@@ -19,9 +19,9 @@ MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         <div class="col-sm-2">
             {% block sidebar %}
             <ul class="sidebar-nav">
-                <li><a href="">Pradžia</a></li>
+                <li><a href="{% url 'namu_puslapis_url' %}">Pradžia</a></li>
                 <li><a href="" class="text-nowrap">Visi irasai</a></li>
-                <li><a href="" class="text-nowrap">Visi atlikejai</a></li> {# jinja komentaras #}
+                <li><a href="{% url 'artistai-visi-url' %}" class="text-nowrap">Visi atlikejai</a></li> {# jinja komentaras #}
                 <li>
                     <form action="" method="get" class="form-group">
                         <input type="text" name="search_text" class="form-control" placeholder="Paieška" style="min-width: 6rem;">

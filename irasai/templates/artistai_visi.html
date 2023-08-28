@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+<h1>Atlikejai</h1>
+<p>Mūsų irasu atlikeju sąrašas:</p>
+<ul>
+    {% for artistas_o in artistai_t %}
+        <li>{{ artistas_o.pavadinimas }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

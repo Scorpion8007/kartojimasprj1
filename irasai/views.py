@@ -17,3 +17,11 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context_t)
+
+def artistai(request):
+    artistai = Artistas.objects.all()
+    # print(authors)
+    context_t = {
+        'artistai_t': artistai
+    }
+    return render(request, 'artistai_visi.html', context=context_t)
