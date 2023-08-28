@@ -5,7 +5,7 @@
 <p>Mūsų irasu atlikeju sąrašas:</p>
 <ul>
     {% for artistas_o in artistai_t %}
-        <li>{{ artistas_o.pavadinimas }}</li>
+        <li><a href="{% url 'artistas-vienas-url' artistas_o.id %}">{{ artistas_o.pavadinimas }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
