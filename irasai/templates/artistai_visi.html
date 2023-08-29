@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Atlikejai</h1>
-<p>Mūsų irasu atlikeju sąrašas:</p>
+<h1>Atlikėjai</h1>
+<p>Mūsų įrašų atlikėjų sąrašas:</p>
 <ul>
-    {% for artistas_o in artistai_t %}
+    {% for artistas_o in artistai_visos_eilutes_t %}
         <li><a href="{% url 'artistas-vienas-url' artistas_o.id %}">{{ artistas_o.pavadinimas }}</a></li>
     {% endfor %}
 </ul>

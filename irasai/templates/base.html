@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block title %}<title>Irasu portalas</title>{% endblock %}
+    {% block title %}<title>Įrašų portalas</title>{% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
@@ -19,12 +19,18 @@ MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         <div class="col-sm-2">
             {% block sidebar %}
             <ul class="sidebar-nav">
-                <li><a href="{% url 'namu_puslapis_url' %}">Pradžia</a></li>
-                <li><a href="" class="text-nowrap">Visi irasai</a></li>
-                <li><a href="{% url 'artistai-visi-url' %}" class="text-nowrap">Visi atlikejai</a></li> {# jinja komentaras #}
+                <li><a href="{% url 'homepage-url' %}">Pradžia</a></li>
+                <li><a href="{% url 'irasai-visi-url' %}" class="text-nowrap">Visi įrašai</a></li>
+                <li><a href="{% url 'artistai-visi-url' %}" class="text-nowrap">Visi atlikėjai</a></li> {# jinja komentaras #}
+                <li><a href="{% url 'katalogai-visi-url' %}" class="text-nowrap">Visi katalogai</a></li>
                 <li>
-                    <form action="" method="get" class="form-group">
-                        <input type="text" name="search_text" class="form-control" placeholder="Paieška" style="min-width: 6rem;">
+                    <form action="{% url 'paieska-url' %}" method="get" class="form-group">
+                        <input type="text" name="laukelio-tekstas" class="form-control" placeholder="Pavadinimu paieska" style="min-width: 6rem;">
+                    </form>
+                </li>
+                <li>
+                    <form action="{% url 'paiesk-url' %}" method="get" class="form-group">
+                        <input type="text" name="laukeli-tekstas" class="form-control" placeholder="Aprasu paieska" style="min-width: 6rem;">
                     </form>
                 </li>
             </ul>

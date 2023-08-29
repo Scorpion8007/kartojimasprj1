@@ -1,18 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h4> {{ artistas_t.pavadinimas }} {{ artistas_t.metai }}</h4>
+<h4> {{ artistas_viena_eilute_t.pavadinimas }} {{ artistas_viena_eilute_t.metai }}</h4>
 <hr/>
-<p>Biografija: {{ artistas_t.biografija }} </p>
-<hr/>
-{% if artistas_t.irasas_set.all %}
-<p>Atlikejas {{artistas_t.pavadinimas }} turi siu </p>
-<hr/>
-    {%  for irasas_o in artistas_t.irasas_set.all %}
-        <p>{{irasas_o.albumas }}, metai: {{ irasas_o.metai_pasirode }}</p>
+<p>Biografija: {{ artistas_viena_eilute_t.biografija }} </p>
+{% if artistas_viena_eilute_t.irasas_set.all %}
+<p class="text-white bg-dark">Atlikėjas {{ artistas_viena_eilute_t.pavadinimas }} turi šiuos įrašus:</p>
+    {% for irasas_o in artistas_viena_eilute_t.irasas_set.all %}
+        <p>{{ irasas_o.albumas }}, metai: {{ irasas_o.metai_pasirode }}</p>
         <hr/>
     {% endfor %}
 {% else %}
-    <p>Atlikejo irasu nera.</p>
+    <p>Atlikėjo įrašų nėra.</p>
 {% endif %}
 {% endblock %}

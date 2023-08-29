@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Paieskos fraze: {{ paiesk_tekstas_t }}</h3>
+{% if paiesk_rezultatai_t %}
+    {% for irasa_o in paiesk_rezultatai_t %}
+    <p>{{ irasa_o.aprasymas }}, {{ irasa_o.artistasFK.biografija }}</p>
+    <p>
+        <a href="{% url 'irasas-vienas-url' irasa_o.id %}">{{ irasa_o.aprasymas }}</a>,
+        <a href="{% url 'artistas-vienas-url' irasa_o.artistasFK.id %}">{{ irasa_o.artistasFK.biografija }}</a>
+    </p>
+    {% endfor %}
+{% else %}
+    <p>Pagal jusu pieska nieko nerasta... </p>
+{% endif %}
+{% endblock %}

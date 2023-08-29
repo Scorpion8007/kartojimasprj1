@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Katalogu sąrašas:</h1>
+<ul type="A">
+    {% for katalogas_o in katalogas_list %}
+        <li>{{ katalogas_o.pavadinimas }}, {{ katalogas_o.artistasFK.pavadinimas }}</li>
+        <li><a href="{% url 'katalogas-vienas-url' katalogas_o.id %}">Atlikiejai</a></li>
+        <li>{{ katalogas_o.pavadinimas }}, {{ katalogas_o.irasasFK.albumas }}</li>
+        <li><a href="{% url 'katalogas-vienas-url' katalogas_o.id %}">Irasai</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

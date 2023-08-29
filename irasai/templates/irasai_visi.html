@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+<h1>Įrašų sąrašas:</h1>
+<ul>
+    {% for irasas_o in irasas_list %}
+        <li>{{ irasas_o.albumas }}, {{ irasas_o.artistasFK.pavadinimas }}</li>
+        <li><a href="{% url 'irasas-vienas-url' irasas_o.id %}">linkas</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
