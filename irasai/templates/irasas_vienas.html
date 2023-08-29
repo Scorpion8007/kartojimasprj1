@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ irasas.albumas }} - {{ irasas.artistasFK.pavadinimas }}</h1>
-
-
+<h2>{{ irasas.albumas }} - {{ irasas.artistasFK.pavadinimas }}</h2>
+<h3>Pasirodimo metai: {{ irasas.metai_pasirode }}</h3>
+<h3>Albumo aprasymas: {{ irasas.aprasymas }}</h3>
+<ul>
+    {% for irasas_o in irasas_list %}
+        <li><a href="{% url 'irasas-vienas-url' irasas_o.id %}">Visi irasai</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
